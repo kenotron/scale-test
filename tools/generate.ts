@@ -13,6 +13,8 @@ const MaxComponentDepth = 5;
 const EntryComponentNumber = 3;
 const ChildrenPerComponent = 5;
 
+fs.rmdirSync(path.join(root, "src/components"), { recursive: true });
+
 let idCount = 0;
 
 const componentMap = new Map<string, ComponentInfo>();
