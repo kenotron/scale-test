@@ -21,27 +21,28 @@ const componentMap = new Map<string, ComponentInfo>();
 
 for (let i = 0; i < EntryComponentNumber; i++) {
   const component = generateComponent();
-  componentMap.set(component.id, component);
 }
 
 function generateComponent(depth: number = 0) {
   const id = idCount++;
   const children = [];
+  const component = {
+    id: id.toString(),
+    depth,
+    name: `Comp_${id.toString().padStart(5, "0")}`,
+    children,
+  };
+
+  componentMap.set(component.id, component);
 
   if (depth < MaxComponentDepth) {
     for (let i = 0; i < ChildrenPerComponent; i++) {
       const child = generateComponent(depth + 1);
-      componentMap.set(child.id, child);
-      children.push(child.id);
+      component.children.push(child.id);
     }
   }
 
-  return {
-    id: id.toString(),
-    depth,
-    name: `Comp_${id}`,
-    children,
-  };
+  return component;
 }
 
 for (const [id, component] of componentMap.entries()) {

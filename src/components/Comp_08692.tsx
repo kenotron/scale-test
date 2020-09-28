@@ -1,0 +1,14 @@
+// Comp_08692
+import React from 'react';
+
+
+const Comp_08692: React.FC = () => {
+  return <div>
+    I'm component Comp_08692
+    <div>
+    
+    </div>
+  </div>;
+};
+
+export default Comp_08692;

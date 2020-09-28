@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
+    "wds": "webpack-dev-server --progress",
     "build": "tsc && vite build",
     "g": "ts-node --project tsconfig.tools.json tools/generate.ts"
   },
   "dependencies": {
     "@pika/react": "^16.13.1",
-    "@pika/react-dom": "^16.13.1"
+    "@pika/react-dom": "^16.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.35",
@@ -17,6 +20,13 @@
     "typescript": "^4.0.3",
     "ts-node": "^9.0.0",
     "vite": "^1.0.0-rc.1",
-    "vite-plugin-react": "^3.0.0"
+    "vite-plugin-react": "^3.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "ts-loader": "^8.0.4",
+    "css-loader": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "file-loader": "^6.1.0"
   }
 }
