@@ -1,0 +1,14 @@
+// Comp_2422
+import React from 'react';
+
+
+const Comp_2422: React.FC = () => {
+  return <div>
+    I'm component Comp_2422
+    <div>
+    
+    </div>
+  </div>;
+};
+
+export default Comp_2422;

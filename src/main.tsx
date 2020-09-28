@@ -1,11 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Comp_0 from "./components/Comp_0";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Comp_0></Comp_0>
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
