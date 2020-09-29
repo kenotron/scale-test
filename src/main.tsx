@@ -7,7 +7,7 @@ import { getModCount } from "./modCount";
 ReactDOM.render(
   <React.StrictMode>
     <button onClick={() => alert(getModCount())}>How many components?</button>
-    <Entry_00_00></Entry_00_0000>
+    <Entry_00_0000></Entry_00_0000>
   </React.StrictMode>,
   document.getElementById("root")
 );

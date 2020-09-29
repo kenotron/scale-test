@@ -9,11 +9,11 @@ const Comp_05_0000: React.FC = () => {
   }, []);
 
   return <div>
-    I'm component Comp_05_0000
+    I'm component Comp_05_0000a
       <div>
-      
-        </div>
-      </div>;
+
+    </div>
+  </div>;
 };
 
 export default Comp_05_0000;

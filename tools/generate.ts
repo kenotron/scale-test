@@ -12,7 +12,7 @@ const root = path.resolve(__dirname, "../");
 
 // 5, 3, 5 is original
 const MaxComponentDepth = 5;
-const EntryComponentNumber = 3;
+const EntryComponentNumber = 1;
 const ChildrenPerComponent = 5;
 
 fs.rmdirSync(path.join(root, "src/components"), { recursive: true });

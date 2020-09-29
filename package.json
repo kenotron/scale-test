@@ -4,6 +4,8 @@
   "scripts": {
     "dev": "vite",
     "wds": "webpack-dev-server --progress",
+    "sp": "snowpack dev",
+    "build:sp": "snowpack build",
     "build": "tsc && vite build",
     "cert": "ts-node --project tsconfig.tools.json tools/cert.ts",
     "g": "ts-node --project tsconfig.tools.json tools/generate.ts"
@@ -30,6 +32,9 @@
     "ts-loader": "^8.0.4",
     "css-loader": "^4.3.0",
     "style-loader": "^1.2.1",
-    "file-loader": "^6.1.0"
+    "file-loader": "^6.1.0",
+    "@types/snowpack-env": "^2.3.0",
+    "@snowpack/app-scripts-react": "^1.11.0",
+    "snowpack": "^2.12.0"
   }
 }
