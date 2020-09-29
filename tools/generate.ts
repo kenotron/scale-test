@@ -9,27 +9,31 @@ interface ComponentInfo {
 }
 
 const root = path.resolve(__dirname, "../");
+
+// 5, 3, 5 is original
 const MaxComponentDepth = 5;
 const EntryComponentNumber = 3;
 const ChildrenPerComponent = 5;
 
 fs.rmdirSync(path.join(root, "src/components"), { recursive: true });
 
-let idCount = 0;
+let idCount: number[] = [];
 
 const componentMap = new Map<string, ComponentInfo>();
 
 for (let i = 0; i < EntryComponentNumber; i++) {
-  const component = generateComponent();
+  const component = generateComponent(0, 'Entry_');
 }
 
-function generateComponent(depth: number = 0) {
-  const id = idCount++;
+function generateComponent(depth: number = 0, prefix: string = 'Comp_',) {
+  idCount[depth] = idCount[depth] || 0;
+  const id = `${depth.toString().padStart(2, "0")}_${(idCount[depth]++).toString().padStart(4, "0")}`;
+
   const children = [];
   const component = {
-    id: id.toString(),
+    id,
     depth,
-    name: `Comp_${id.toString().padStart(5, "0")}`,
+    name: `${prefix}${id}`,
     children,
   };
 
@@ -53,35 +57,36 @@ for (const [id, component] of componentMap.entries()) {
   );
   const contents = `// ${component.name}
 import React from 'react';
-${
-  component.children &&
-  component.children
-    .map(
-      (child) =>
-        `import ${componentMap.get(child).name} from './${
-          componentMap.get(child).name
-        }';`
-    )
-    .join("\n")
-}
+import { incModCount } from '../modCount';
+${component.children &&
+    component.children
+      .map(
+        (child) =>
+          `import ${componentMap.get(child).name} from './${componentMap.get(child).name
+          }';`
+      )
+      .join("\n")
+    }
 
 const ${component.name}: React.FC = () => {
+  React.useEffect(() => {
+    incModCount();
+  }, []);
+
   return <div>
     I'm component ${component.name}
-    <div>
-    ${
-      component.children &&
-      component.children
-        .map(
-          (child) =>
-            `<${componentMap.get(child).name}></${
-              componentMap.get(child).name
-            }>';`
-        )
-        .join("\n")
+      <div>
+      ${component.children &&
+    component.children
+      .map(
+        (child) =>
+          `<${componentMap.get(child).name}></${componentMap.get(child).name
+          }>';`
+      )
+      .join("\n")
     }
-    </div>
-  </div>;
+        </div>
+      </div>;
 };
 
 export default ${component.name};

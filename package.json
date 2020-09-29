@@ -5,6 +5,7 @@
     "dev": "vite",
     "wds": "webpack-dev-server --progress",
     "build": "tsc && vite build",
+    "cert": "ts-node --project tsconfig.tools.json tools/cert.ts",
     "g": "ts-node --project tsconfig.tools.json tools/generate.ts"
   },
   "dependencies": {
@@ -14,9 +15,11 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "auto.self.sign": "^1.0.1",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/node": "^14.11.2",
+    "selfsigned": "^1.10.8",
     "typescript": "^4.0.3",
     "ts-node": "^9.0.0",
     "vite": "^1.0.0-rc.1",

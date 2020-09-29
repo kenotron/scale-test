@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Comp_00000 from "./components/Comp_00000";
+import Entry_00_0000 from "./components/Entry_00_0000";
+import { getModCount } from "./modCount";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Comp_00000></Comp_00000>
+    <button onClick={() => alert(getModCount())}>How many components?</button>
+    <Entry_00_00></Entry_00_0000>
   </React.StrictMode>,
   document.getElementById("root")
 );
