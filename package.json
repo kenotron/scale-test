@@ -34,7 +34,7 @@
     "style-loader": "^1.2.1",
     "file-loader": "^6.1.0",
     "@types/snowpack-env": "^2.3.0",
-    "@snowpack/app-scripts-react": "^1.11.0",
-    "snowpack": "^2.12.0"
+    "@snowpack/app-scripts-react": "1.12.3",
+    "snowpack": "next"
   }
 }
